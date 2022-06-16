@@ -61,6 +61,7 @@ const Form = ({ currentId, setCurrentId }) => {
         </Typography>
         <TextField
           name="creator"
+          required
           variant="outlined"
           label="Creator"
           fullWidth
@@ -71,6 +72,7 @@ const Form = ({ currentId, setCurrentId }) => {
         />
         <TextField
           name="title"
+          required
           variant="outlined"
           label="Title"
           fullWidth
