@@ -1,5 +1,6 @@
 import { AUTH, LOGOUT } from "../constants/actionTypes";
 
+// auth reducer conditions
 const authReducer = (state = { authData: null }, action) => {
   switch (action.type) {
     case AUTH:
