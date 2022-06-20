@@ -10,6 +10,7 @@ import {
 } from "@material-ui/core";
 import GoogleLogin from "react-google-login";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import Input from "./Input";
 import useStyles from "./styles";
@@ -21,6 +22,7 @@ const Auth = () => {
   //state variables
   const [showPassword, setShowPassword] = useState(false);
   const [isSignup, setIsSignup] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = () => {};
 
@@ -32,6 +34,8 @@ const Auth = () => {
 
     try {
       dispatch({ type: "AUTH", data: { result, token } });
+
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
