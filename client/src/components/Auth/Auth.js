@@ -56,7 +56,7 @@ const Auth = () => {
     try {
       dispatch({ type: "AUTH", data: { result, token } });
 
-      navigate("/");
+      navigate("/", { replace: true });
     } catch (error) {
       console.log(error);
     }
@@ -68,7 +68,7 @@ const Auth = () => {
 
   const switchMode = () => {
     setIsSignup((prevIsSignup) => !prevIsSignup);
-    handleShowPassword(false);
+    setShowPassword(false);
   };
 
   const handleShowPassword = () =>

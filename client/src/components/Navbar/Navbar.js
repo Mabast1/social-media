@@ -19,7 +19,7 @@ const Navbar = () => {
   const logout = () => {
     dispatch({ type: "LOGOUT" });
 
-    navigate.push("/");
+    navigate("/", { replace: true });
 
     setUser(null);
   };
