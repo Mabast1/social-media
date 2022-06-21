@@ -9,7 +9,7 @@ import { createPost, updatePost } from "../../actions/posts";
 
 const Form = ({ currentId, setCurrentId }) => {
   const [postData, setPostData] = useState({
-    creator: "",
+    // creator: "",
     title: "",
     message: "",
     tags: "",
@@ -22,6 +22,8 @@ const Form = ({ currentId, setCurrentId }) => {
   const classes = useStyles();
   const dispatch = useDispatch();
 
+  const user = JSON.parse(localStorage.getItem("profile"));
+
   useEffect(() => {
     if (post) setPostData(post);
   }, [post]);
@@ -30,17 +32,29 @@ const Form = ({ currentId, setCurrentId }) => {
     e.preventDefault();
 
     if (currentId) {
-      dispatch(updatePost(currentId, postData));
+      dispatch(
+        updatePost(currentId, { ...postData, name: user?.result?.name })
+      );
     } else {
-      dispatch(createPost(postData));
+      dispatch(createPost({ ...postData, name: user?.result?.name }));
     }
     clear();
   };
 
+  if (!user?.result?.name) {
+    return (
+      <Paper className={classes.paper}>
+        <Typography variant="h6" align="center">
+          Please Sign In to Create or Edit Posts
+        </Typography>
+      </Paper>
+    );
+  }
+
   const clear = () => {
     setCurrentId(null);
     setPostData({
-      creator: "",
+      // creator: "",
       title: "",
       message: "",
       tags: "",
@@ -59,7 +73,7 @@ const Form = ({ currentId, setCurrentId }) => {
         <Typography variant="h6">
           {currentId ? "Updating" : "Creating"} a Memory
         </Typography>
-        <TextField
+        {/* <TextField
           name="creator"
           required
           variant="outlined"
@@ -69,7 +83,7 @@ const Form = ({ currentId, setCurrentId }) => {
           onChange={(e) =>
             setPostData({ ...postData, creator: e.target.value })
           }
-        />
+        /> */}
         <TextField
           name="title"
           required
