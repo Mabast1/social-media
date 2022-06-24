@@ -45,7 +45,7 @@ const Form = ({ currentId, setCurrentId }) => {
     return (
       <Paper className={classes.paper}>
         <Typography variant="h6" align="center">
-          Please Sign In to Create or Edit Posts
+          Please Sign In to Create or Edit Tasks
         </Typography>
       </Paper>
     );
@@ -71,7 +71,7 @@ const Form = ({ currentId, setCurrentId }) => {
         onSubmit={handleSubmit}
       >
         <Typography variant="h6">
-          {currentId ? "Updating" : "Creating"} a Memory
+          {currentId ? "Updating" : "Creating"} a Task
         </Typography>
         {/* <TextField
           name="creator"
