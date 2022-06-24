@@ -37,7 +37,7 @@ const Navbar = () => {
           component={Link}
           to="/"
           className={classes.heading}
-          variant="h2"
+          variant="h3"
           align="center"
         >
           Tasks
