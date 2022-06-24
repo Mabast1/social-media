@@ -3,7 +3,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import { AppBar, Avatar, Button, Toolbar, Typography } from "@material-ui/core";
 import { useDispatch } from "react-redux";
 
-import memories from "../../images/memories.png";
+import tasks from "../../images/tasks.png";
 import useStyles from "./styles";
 
 const Navbar = () => {
@@ -42,12 +42,7 @@ const Navbar = () => {
         >
           Tasks
         </Typography>
-        <img
-          className={classes.image}
-          src={memories}
-          alt="memories"
-          height="60"
-        />
+        <img className={classes.image} src={tasks} alt="memories" height="60" />
       </div>
       <Toolbar className={classes.toolbar}>
         {user ? (
