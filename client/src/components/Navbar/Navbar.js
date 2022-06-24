@@ -40,7 +40,7 @@ const Navbar = () => {
           variant="h2"
           align="center"
         >
-          Memories
+          Tasks
         </Typography>
         <img
           className={classes.image}
