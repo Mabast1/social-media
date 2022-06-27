@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { FiLogOut } from "react-icons/fi";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { AppBar, Avatar, Button, Toolbar, Typography } from "@material-ui/core";
 import { useDispatch } from "react-redux";
@@ -69,13 +70,14 @@ const Navbar = () => {
             <Typography className={classes.userName} variant="h6">
               {user.result.name}
             </Typography>
+            <div className={classes.borderR} />
             <Button
               variant="contained"
               className={classes.logout}
               color="secondary"
               onClick={logout}
             >
-              Logout
+              <FiLogOut />
             </Button>
           </>
         ) : (
