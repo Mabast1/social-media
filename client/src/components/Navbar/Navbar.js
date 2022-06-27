@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FiLogOut } from "react-icons/fi";
+import ReactToolTip from "react-tooltip";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { AppBar, Avatar, Button, Toolbar, Typography } from "@material-ui/core";
 import { useDispatch } from "react-redux";
@@ -71,14 +72,17 @@ const Navbar = () => {
               {user.result.name}
             </Typography>
             <div className={classes.borderR} />
+
             <Button
               variant="contained"
               className={classes.logout}
               color="secondary"
               onClick={logout}
+              data-tip="Log out"
             >
               <FiLogOut />
             </Button>
+            <ReactToolTip />
           </>
         ) : (
           <Button

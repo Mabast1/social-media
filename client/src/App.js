@@ -21,7 +21,7 @@ const App = () => {
           <Route path="/posts/:id" element={<PostDetails />} />
           <Route
             path="/auth"
-            element={!user ? <Auth /> : <Navigate to="/posts" replace={true} />}
+            element={!user ? <Auth /> : <Navigate to="/posts" />}
           />
         </Routes>
       </Container>
