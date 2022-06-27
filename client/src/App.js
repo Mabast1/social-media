@@ -8,16 +8,21 @@ import Auth from "./components/Auth/Auth";
 import PostDetails from "./components/PostDetails/PostDetails";
 
 const App = () => {
+  const user = JSON.parse(localStorage.getItem("profile"));
+
   return (
     <BrowserRouter>
       <Container maxWidth="xl">
         <Navbar />
         <Routes>
-          <Route path="/" element={<Navigate to="/posts" replace />} />
+          <Route path="/" element={<Navigate to="/posts" replace={true} />} />
           <Route path="/posts" element={<Home />} />
           <Route path="/posts/search" element={<Home />} />
           <Route path="/posts/:id" element={<PostDetails />} />
-          <Route path="/auth" element={<Auth />} />
+          <Route
+            path="/auth"
+            element={!user ? <Auth /> : <Navigate to="/posts" replace={true} />}
+          />
         </Routes>
       </Container>
     </BrowserRouter>
