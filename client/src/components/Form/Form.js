@@ -86,7 +86,7 @@ const Form = ({ currentId, setCurrentId }) => {
         /> */}
         <TextField
           name="title"
-          required
+          required={true}
           variant="outlined"
           label="Title"
           fullWidth
