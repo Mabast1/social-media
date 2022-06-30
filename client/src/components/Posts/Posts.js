@@ -7,11 +7,12 @@ import useStlyes from "./styles";
 
 const Posts = ({ setCurrentId }) => {
   const classes = useStlyes();
-  const { posts } = useSelector((state) => state.posts);
+  const { posts, isLoading } = useSelector((state) => state.posts);
 
-  console.log(posts);
-
-  return !posts?.length ? (
+  if (!posts.length && !isLoading) {
+    return "No posts found";
+  }
+  return isLoading ? (
     <CircularProgress />
   ) : (
     <Grid
