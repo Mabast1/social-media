@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Container,
   Grow,
@@ -12,7 +12,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate, useLocation } from "react-router-dom";
 import ChipInput from "material-ui-chip-input";
 
-import { getPosts, getPostsBySearch } from "../../actions/posts";
+import { getPostsBySearch } from "../../actions/posts";
 import Posts from "../Posts/Posts";
 import Form from "../Form/Form";
 import useStlyes from "./styles";
@@ -30,7 +30,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   const page = query.get("page") || 1;
-  const searchQuery = query.get("search");
+  // const searchQuery = query.get("search");
 
   const [search, setSearch] = useState("");
   const [tags, setTags] = useState([]);

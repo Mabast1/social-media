@@ -6,7 +6,6 @@ import {
   UPDATE,
   DELETE,
   LIKE,
-  START_LOADING,
   END_LOADING,
 } from "../constants/actionTypes";
 
